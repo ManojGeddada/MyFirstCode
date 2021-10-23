@@ -10,6 +10,7 @@ class MysqlCrud implements iCrud
 	String serverName = "165.22.14.77";
 	String url = "jdbc:mysql://" + serverName + "/" + databaseName;
 
+
 	Connection conn;
 
 	public Connection getDatabaseConnection()
