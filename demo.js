@@ -21,6 +21,12 @@ function readInputs()
 	});
 }
 
+
+
+
+
+
+
 function writeFile()
 {
 	fs.writeFile('data.txt', userData, function (err, data)
