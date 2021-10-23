@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cookies</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+</head>
+<body>
+	<form>
+		<input type="text" placeholder=" Enter Username" id="user" name="user">
+		<input type="password" placeholder="Enter Password" id="pwd" name="pwd">
+		<input type="checkbox" id="remember" checked><br/><br/>
+		<input type="submit" onclick="loginCookies()" id="sub">
+	</form>
+</body>
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		var userName = $.cookie('userName');
+		var userPwd = $.cookie('Password');
+		if(userName != null)
+		{
+			$('#user').val(userName);
+		}
+		if(userPwd != null)
+		{
+			$('#pwd').val(userPwd);
+		}
+	});
+ 
+	function loginCookies()
+	{
+		var userName = $('#user').val();
+		var userPwd = $('#pwd').val();
+		if($('#remember').is(':checked'))
+		{
+			$.cookie('userName',userName, {expries: 1});
+			$.cookie('Password',userPwd, {expries: 1});
+		}
+		window.location.reload();
+	}
+</script>
+</html>
